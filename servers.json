@@ -1,0 +1,5 @@
+[
+    {"nombre": "Servidor 1", "ip": "111.111.11.1"},
+    {"nombre": "Servidor 2", "ip": "111.111.11.2"},
+    {"nombre": "Servidor 3", "ip": "111.111.11.3"}
+]
