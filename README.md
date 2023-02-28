@@ -16,7 +16,7 @@ Para esto, se debe correr en la consola el siguiente comando:
 `pip install PyQt5 QDarkStyle requests`
 
 ## Ejecución
-Una vez instalados los paquetes, para ejecutar el programa simplemente se debe correr el archivo **run_status_bot.py**. Al abrirse la interfaz, se mostrarán dos tablas: una para el estado de los servidores y otra para el estado de las páginas web. Para cada servidor o página web, se mostrará su nombre, su IP o URL, y su estado actual, que puede ser `LOADING`, `ONLINE` o `OFFLINE`.
+Una vez instalados los paquetes, para ejecutar el programa simplemente se debe correr el archivo **run_status_bot.py**. Al abrirse la interfaz, se mostrarán dos tablas: una para el estado de los servidores y otra para el estado de las páginas web. Para cada servidor o página web, se mostrará su nombre, su IP o URL, y su estado actual, que puede ser **LOADING**, **ONLINE** o **OFFLINE**.
 
 ## Archivos JSON
 El archivo servers.json y websites.json son los archivos JSON que contienen la información de los servidores y páginas web, respectivamente. Cada archivo debe tener una lista de objetos, donde cada objeto contiene su nombre y su IP o URL de un servidor o página web.
