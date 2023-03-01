@@ -26,4 +26,7 @@ El programa también incluye un Worker, que se encarga de comprobar periódicame
 
 Para detener el programa se debe cerrar la ventana, y esperar que la consola de python se cierre automaticamente despues de un tiempo.
 
+## Sobre el desarrollo
+Este proyecto incluye fragmentos de código generados con la ayuda del modelo Chat GPT de OpenAI, que está sujeto a los Términos de servicio de la API de OpenAI.
+
 </div>
