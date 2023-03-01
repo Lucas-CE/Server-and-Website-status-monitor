@@ -1,4 +1,4 @@
-from archives.pinger import ping_multiplie_tries, request_website
+from archives.reviewer import ping_multiplie_tries, request_website
 from PyQt5.QtCore import QThread, pyqtSignal
 from typing import Callable
 import concurrent.futures

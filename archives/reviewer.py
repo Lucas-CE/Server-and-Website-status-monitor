@@ -28,20 +28,28 @@ def ping_multiplie_tries(server_ip: str, max_attempts: int = 3) -> bool:
 
 
 
-def request_website(url: str) -> bool:
+def request_website(url: str, max_attempts: int = 2) -> bool:
     """
     Intenta abrir la página web de la url, y retorna True si el código de retorno es exitoso, y False
     en caso contrario.
 
     Args:
         url (str): La dirección URL de un sitio web.
+        max_attempts (int) optional: Número de intentos permitidos de correr ping con resultado fallido.
+                                     Por defecto 2.
 
     Returns:
         bool: True si el código de retorno está entre 100 y 400, y False en caso contrario.
     """
     try:
         response = req.urlopen(url).getcode()
+        attempt = 1
         successful = True if response in range(100, 400) else False
+
+        while not response and attempt < max_attempts:
+            response = req.urlopen(url).getcode()
+            successful = True if response in range(100, 400) else False
+            attempt += 1
     except:
         successful = False
 
