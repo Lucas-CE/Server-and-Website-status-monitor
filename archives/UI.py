@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QHeaderView
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QHeaderView, QLabel
 from archives.controller import update_server_states, update_website_states, Worker
 from PyQt5.QtGui import QColor, QFont, QCloseEvent
 from typing import Tuple
@@ -94,11 +94,34 @@ class MainWindow(QMainWindow):
         # Crear datos de la tabla
         server_data = self.prepare_data(json_server_path, "ip")
         website_data = self.prepare_data(json_website_path, "url")
-        #
+        
+        #Medidas y posiciones de las tablas
         table_width = window_width * 0.45
-        table_height = window_height - 50
-        top_margin = window_height * 0.05
-        x_margin = (window_width - 2 * table_width) / 4
+        table_height = window_height * 0.9
+        top_margin = window_height * 0.1
+        server_table_x_margin = (window_width - 2 * table_width) / 4
+        website_table_x_margin = window_width - table_width - server_table_x_margin
+
+        #Medidas y posiciones de los titulos de las tablas
+        server_title_x_margin = server_table_x_margin + 250
+        titles_top_margin = window_height * 0.012
+        website_title_x_margin = website_table_x_margin + 240
+
+
+        # Agregar título a la tabla de servidores
+        server_label = QLabel("Servers", self)
+        server_label.setStyleSheet(f"font-size: 30px; color: white; font-weight: bold;")
+        server_label.setGeometry(
+            int(server_title_x_margin), int(titles_top_margin), int(table_width), int(window_height * 0.08)
+            )
+        
+        # Agregar título a la tabla de servidores
+        server_label = QLabel("Websites", self)
+        server_label.setStyleSheet(f"font-size: 30px; color: white; font-weight: bold;")
+        server_label.setGeometry(
+            int(website_title_x_margin), int(titles_top_margin), int(table_width), int(window_height * 0.08)
+            )
+
 
         # Crear tabla de servidores
         server_table = \
@@ -107,7 +130,7 @@ class MainWindow(QMainWindow):
             table_height, 
             server_data, 
             headers_server_table, 
-            x_margin, 
+            server_table_x_margin, 
             top_margin
             )
 
@@ -118,7 +141,7 @@ class MainWindow(QMainWindow):
             table_height, 
             website_data, 
             headers_website_table, 
-            window_width - table_width - x_margin, 
+            website_table_x_margin, 
             top_margin
             )
         
@@ -179,6 +202,7 @@ class MainWindow(QMainWindow):
         tableWidget.setGeometry(int(xpos), int(ypos), int(width), int(height))
         tableWidget.setRowCount(len(table_data))
         tableWidget.setColumnCount(len(headers))
+        tableWidget.setWindowTitle("hola")
 
         # Setear cabeceras de la tabla
         tableWidget.setHorizontalHeaderLabels(headers)
