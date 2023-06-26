@@ -10,10 +10,11 @@ Para ejecutar el programa es necesario instalar los siguientes paquetes:
 - PyQt5: para la creación de la interfaz gráfica
 - qdarkstyle: para cambiar el estilo visual de la interfaz
 - requests: para realizar peticiones HTTP a las páginas web y verificar si están funcionando.
+- ping3: para hacer ping a los servidores y verificar si están funcionando.
 
 Para esto, se debe correr en la consola el siguiente comando:
 
-`pip install PyQt5 QDarkStyle requests`
+`pip install PyQt5 QDarkStyle requests ping3`
 
 ## Ejecución y cierre de ventana
 Una vez instalados los paquetes, para ejecutar el programa simplemente se debe correr el archivo **run_status_bot.py**. Al abrirse la interfaz, se mostrarán dos tablas: una para el estado de los servidores y otra para el estado de las páginas web. Para cada servidor o página web, se mostrará su nombre, su IP o URL, y su estado actual, que puede ser **LOADING**, **ONLINE** o **OFFLINE**.
