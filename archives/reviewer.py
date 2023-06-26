@@ -1,5 +1,5 @@
 import urllib.request as req
-import subprocess as sub
+from ping3 import ping
 
 
 def ping_multiplie_tries(server_ip: str, max_attempts: int = 3) -> bool:
@@ -17,14 +17,14 @@ def ping_multiplie_tries(server_ip: str, max_attempts: int = 3) -> bool:
     Returns:
         bool: True si el ping fue exitoso. False en caso contrario.
     """
-    response = sub.getstatusoutput(f"ping {server_ip}")[0]
+    response = ping(server_ip)
     attempt = 1
 
-    while response != 0 and attempt < max_attempts:
-        response = sub.getstatusoutput(f"ping {server_ip}")[0]
+    while response == False and attempt < max_attempts:
+        response = ping(server_ip)
         attempt += 1
 
-    return True if response == 0 else False
+    return response
 
 
 
