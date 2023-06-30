@@ -1,35 +1,35 @@
 
 <div style="text-align: justify">
 
-# Monitor de servidores y websites
-Este repositorio contiene un programa que permite monitorear el estado de servidores y páginas web, a partir de archivos JSON que contienen la información de cada servidor o página web.
+# Server and Website Monitor
+This repository contains a program that allows monitoring the status of servers and websites based on JSON files that contain the information of each server or website.
 
-## Requisitos
-Para ejecutar el programa es necesario instalar los siguientes paquetes:
+## Requirements
+To run the program, you need to install the following packages:
 
-- PyQt5: para la creación de la interfaz gráfica
-- qdarkstyle: para cambiar el estilo visual de la interfaz
-- requests: para realizar peticiones HTTP a las páginas web y verificar si están funcionando.
-- ping3: para hacer ping a los servidores y verificar si están funcionando.
+- PyQt5: for creating the graphical interface.
+- qdarkstyle: for changing the visual style of the interface.
+- requests: for making HTTP requests to the websites and checking if they are functioning.
+- ping3: for pinging the servers and checking if they are working.
 
-Para esto, se debe correr en la consola el siguiente comando:
+To install these packages, run the following command in the console:
 
 `pip install PyQt5 QDarkStyle requests ping3`
 
-## Ejecución y cierre de ventana
-Una vez instalados los paquetes, para ejecutar el programa simplemente se debe correr el archivo **run_status_bot.py**. Al abrirse la interfaz, se mostrarán dos tablas: una para el estado de los servidores y otra para el estado de las páginas web. Para cada servidor o página web, se mostrará su nombre, su IP o URL, y su estado actual, que puede ser **LOADING**, **ONLINE** o **OFFLINE**.
+## Execution and Window Closure
+Once the packages are installed, to execute the program, simply run the **run_status_bot.py** file. When the interface opens, two tables will be displayed: one for the status of the servers and another for the status of the websites. For each server or website, its name, IP or URL, and current status will be shown, which can be **LOADING**, **ONLINE**, or **OFFLINE**.
 
-Al cerrar la ventana, del monitor, va a quedar la consola de python por unos segundos. Es importante que cuando esto pase, no se cierre la consola de python, esta se cerrará automaticamente despues de unos segundos.
+When you close the monitor window, the python console will remain open for a few seconds. It is important not to close the python console when this happens, as it will automatically close after a few seconds.
 
-## Archivos JSON
-El archivo servers.json y websites.json son los archivos JSON que contienen la información de los servidores y páginas web, respectivamente. Cada archivo debe tener una lista de objetos, donde cada objeto contiene su nombre y su IP o URL de un servidor o página web.
+## JSON Files
+The servers.json and websites.json files are the JSON files that contain the information of the servers and websites, respectively. Each file should have a list of objects, where each object contains the name and IP or URL of a server or website.
 
-## Funcionamiento
-El programa también incluye un Worker, que se encarga de comprobar periódicamente el estado de los servidores y páginas web. Este Worker se ejecuta en un hilo aparte para no bloquear la interfaz gráfica. Cuando se detecta un cambio en el estado de un servidor o página web, se actualiza automáticamente la tabla correspondiente.
+## Functionality
+The program also includes a Worker that periodically checks the status of the servers and websites. This Worker runs in a separate thread to avoid blocking the graphical interface. When a change in the status of a server or website is detected, the corresponding table is automatically updated.
 
-Para detener el programa se debe cerrar la ventana, y esperar que la consola de python se cierre automaticamente despues de un tiempo.
+To stop the program, simply close the window and wait for the python console to close automatically after a while.
 
-## Sobre el desarrollo
-Este proyecto incluye fragmentos de código generados con la ayuda del modelo Chat GPT de OpenAI, que está sujeto a los Términos de servicio de la API de OpenAI.
+## About the Development
+This project includes code snippets generated with the help of the OpenAI Chat GPT model, which is subject to the OpenAI API Terms of Service.
 
 </div>
